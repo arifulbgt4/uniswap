@@ -2,11 +2,14 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "isolatedModules": true
   },
-  "exclude": ["node_modules", "cypress"],
-  "include": ["src/**/*"],
-  "ts-jest": {
-    "isolatedModules": false
-  }
+  "exclude": [
+    "node_modules",
+    "cypress"
+  ],
+  "include": [
+    "src/**/*"
+  ]
 }
