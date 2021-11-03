@@ -7,10 +7,10 @@ import { useMemo } from 'react'
 
 import { V3_CORE_FACTORY_ADDRESSES } from '../constants/addresses'
 import { useMultipleContractSingleData } from '../state/multicall/hooks'
-import { IUniswapV3PoolStateInterface } from '../types/v3/IUniswapV3PoolState'
+// import { IUniswapV3PoolStateInterface } from '../types/v3/IUniswapV3PoolState'
 import { useActiveWeb3React } from './web3'
 
-const POOL_STATE_INTERFACE = new Interface(IUniswapV3PoolStateABI) as IUniswapV3PoolStateInterface
+const POOL_STATE_INTERFACE = new Interface(IUniswapV3PoolStateABI)
 
 export enum PoolState {
   LOADING,

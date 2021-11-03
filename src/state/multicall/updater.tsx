@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
-import { UniswapInterfaceMulticall } from 'types/v3'
 
+// import { UniswapInterfaceMulticall } from 'types/v3'
 import { useMulticall2Contract } from '../../hooks/useContract'
 import useDebounce from '../../hooks/useDebounce'
 import { useActiveWeb3React } from '../../hooks/web3'
@@ -21,7 +21,7 @@ const DEFAULT_CALL_GAS_REQUIRED = 1_000_000
  * @param blockNumber block number passed as the block tag in the eth_call
  */
 async function fetchChunk(
-  multicall: UniswapInterfaceMulticall,
+  multicall: any,
   chunk: Call[],
   blockNumber: number
 ): Promise<{ success: boolean; returnData: string }[]> {
@@ -40,7 +40,7 @@ async function fetchChunk(
     )
 
     if (process.env.NODE_ENV === 'development') {
-      returnData.forEach(({ gasUsed, returnData, success }, i) => {
+      returnData.forEach(({ gasUsed, returnData, success }: any, i: number): any => {
         if (
           !success &&
           returnData.length === 2 &&
